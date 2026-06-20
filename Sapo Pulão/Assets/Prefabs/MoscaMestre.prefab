@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2756339804814834001
+--- !u!1 &3407350764410382891
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4490328278638096123}
-  - component: {fileID: 8114127285692260341}
-  - component: {fileID: 2691942479184231306}
-  - component: {fileID: 1269259933801083221}
+  - component: {fileID: 826361899529450122}
+  - component: {fileID: 3327027509038912673}
+  - component: {fileID: 7604832153633321485}
+  - component: {fileID: 8808761410381716855}
   m_Layer: 0
-  m_Name: Chao
-  m_TagString: Chao
+  m_Name: MoscaMestre
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4490328278638096123
+--- !u!4 &826361899529450122
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2756339804814834001}
+  m_GameObject: {fileID: 3407350764410382891}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8546, y: -3.5379, z: 0}
-  m_LocalScale: {x: 4.064624, y: 0.9841, z: 1}
+  m_LocalPosition: {x: 5.2476616, y: -0.34737986, z: 0}
+  m_LocalScale: {x: 3.01004, y: 3.01004, z: 3.01004}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8114127285692260341
+--- !u!212 &3327027509038912673
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2756339804814834001}
+  m_GameObject: {fileID: 3407350764410382891}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -83,23 +83,23 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Color: {r: 0.2735849, g: 0, b: 0, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!61 &2691942479184231306
+--- !u!61 &7604832153633321485
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2756339804814834001}
+  m_GameObject: {fileID: 3407350764410382891}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -123,14 +123,14 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.13}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.28866667}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -139,18 +139,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1269259933801083221
+--- !u!114 &8808761410381716855
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2756339804814834001}
+  m_GameObject: {fileID: 3407350764410382891}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9037414af80d76f4e8a540d46f55c616, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e4abd01a7bb183439d430c5023bc37d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  SelfOBJ: {fileID: 2756339804814834001}
-  Mosca: {fileID: 5437248768382677395, guid: 5f5e93809c9ae5b48b01fc094f734683, type: 3}
-  Min_Max_Distance: {x: 4.5, y: 14}
+  velocidade: 1.5
+  IsMoscaMestre: 1

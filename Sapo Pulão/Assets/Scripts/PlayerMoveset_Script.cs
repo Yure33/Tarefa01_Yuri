@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -9,20 +10,25 @@ public class PlayerMoveset_Script : MonoBehaviour
     [SerializeField] Vector2 Força_AtualMAX;
     [SerializeField] Vector3 Offset;
     [SerializeField] Animator animeSapo;
+    [SerializeField] float velocity;
     public Transform CameraFoco;
     public Rigidbody2D fisicaSapo;
     public float TimeDelayJump;
+    int direction = 0;
     bool ReleasedSpace = true;
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        //NAO SEI UTILIZAR O NEW INPUT SYSTEM :(
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (!ReleasedSpace && Força_AtualMAX[0] == 0)
+        {
+            fisicaSapo.position += Vector2.right*direction*velocity*Time.fixedDeltaTime;
+        }
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (context.performed)
         {
             Debug.Log("Apertei :)");
             if(Força_AtualMAX[0] == 0 && !ReleasedSpace)
@@ -32,7 +38,7 @@ public class PlayerMoveset_Script : MonoBehaviour
             }
             StartCoroutine(ChangeForce());
         }
-        if (Keyboard.current.spaceKey.wasReleasedThisFrame)
+        if (context.canceled)
         {
             Debug.Log("Soltei :(");
             animeSapo.speed = 1;
@@ -51,6 +57,11 @@ public class PlayerMoveset_Script : MonoBehaviour
                 Força_AtualMAX[0] = 0;
             }
         }
+    }
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        direction = (int)context.ReadValue<Vector2>().x;
     }
 
     void OnCollisionEnter2D(Collision2D colisao)
