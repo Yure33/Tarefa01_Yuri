@@ -7,6 +7,7 @@ public class Chao_Script : MonoBehaviour
     Vector3 Offset;
     float tempoDestruir = 2f;
     public GameObject SelfOBJ;
+    public GameObject Mosca;
     public Vector2 Min_Max_Distance;
 
     void Start()
@@ -31,7 +32,16 @@ public class Chao_Script : MonoBehaviour
         {
             if (!PlayerChegou)
             {
-               Instantiate(SelfOBJ, this.gameObject.transform.position+Offset, this.gameObject.transform.rotation);
+                if (SelfOBJ != null)
+                {
+                    Instantiate(SelfOBJ, this.gameObject.transform.position+Offset, this.gameObject.transform.rotation);
+                }
+                if(Mosca != null)
+                {
+                    Vector3 moscaPosicao = new Vector3(Offset.x*2, 10, 0);
+                    Instantiate(Mosca, this.gameObject.transform.position+moscaPosicao, this.gameObject.transform.rotation);
+                }
+
                 PlayerChegou = true; 
             }
             else

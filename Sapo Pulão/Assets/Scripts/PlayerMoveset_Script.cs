@@ -62,11 +62,6 @@ public class PlayerMoveset_Script : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         direction = (int)context.ReadValue<Vector2>().x;
-        if(direction != 0)
-        {
-            Debug.Log(math.clamp(direction, -0.3f, 0.3f));
-            this.transform.localScale = new Vector3(math.clamp(direction, -0.3f, 0.3f), 0.3f, 0.3f);
-        }
     }
 
     void OnCollisionEnter2D(Collision2D colisao)
