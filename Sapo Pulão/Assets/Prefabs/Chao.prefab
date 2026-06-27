@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4490328278638096123}
   - component: {fileID: 8114127285692260341}
-  - component: {fileID: 2691942479184231306}
   - component: {fileID: 1269259933801083221}
+  - component: {fileID: 8877352851185204571}
   m_Layer: 0
   m_Name: Chao
   m_TagString: Chao
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 2756339804814834001}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8546, y: -3.5379, z: 0}
-  m_LocalScale: {x: 4.064624, y: 0.9841, z: 1}
+  m_LocalPosition: {x: -1.8546, y: -3.1909, z: 0}
+  m_LocalScale: {x: 1.6, y: 1.7, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 1965494622656466359, guid: cd06b0a5d829f3c489b05794c623c417, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,8 +93,23 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!61 &2691942479184231306
-BoxCollider2D:
+--- !u!114 &1269259933801083221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2756339804814834001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9037414af80d76f4e8a540d46f55c616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  SelfOBJ: {fileID: 2756339804814834001}
+  Mosca: {fileID: 5437248768382677395, guid: 5f5e93809c9ae5b48b01fc094f734683, type: 3}
+  Min_Max_Distance: {x: 4.5, y: 14}
+--- !u!70 &8877352851185204571
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -127,30 +142,6 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &1269259933801083221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2756339804814834001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9037414af80d76f4e8a540d46f55c616, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  SelfOBJ: {fileID: 2756339804814834001}
-  Mosca: {fileID: 5437248768382677395, guid: 5f5e93809c9ae5b48b01fc094f734683, type: 3}
-  Min_Max_Distance: {x: 4.5, y: 14}
+  m_Offset: {x: 0.14, y: -1.5}
+  m_Size: {x: 2.65, y: 1.84}
+  m_Direction: 1
