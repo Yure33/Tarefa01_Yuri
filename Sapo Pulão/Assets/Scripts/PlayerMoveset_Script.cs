@@ -11,6 +11,8 @@ public class PlayerMoveset_Script : MonoBehaviour
     [SerializeField] Vector3 Offset;
     [SerializeField] Animator animeSapo;
     [SerializeField] float velocity;
+    [SerializeField] AudioSource SFX;
+    [SerializeField] AudioClip pulo;
     public Transform CameraFoco;
     public Rigidbody2D fisicaSapo;
     public float TimeDelayJump;
@@ -52,6 +54,7 @@ public class PlayerMoveset_Script : MonoBehaviour
                 Debug.Log("Pulei com força: " + Força_AtualMAX[0].ToString());
                 fisicaSapo.AddForce(new Vector2(H_Force, Força_AtualMAX[0]*2), ForceMode2D.Impulse);
                 animeSapo.Play("PulandoA");
+                SFX.PlayOneShot(pulo);
 
                 //ZERAR FORÇA
                 Força_AtualMAX[0] = 0;
@@ -62,6 +65,13 @@ public class PlayerMoveset_Script : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         direction = (int)context.ReadValue<Vector2>().x;
+        if(direction != 0){
+            animeSapo.SetBool("Andando", true);
+        }
+        else
+        {
+            animeSapo.SetBool("Andando", false);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D colisao)

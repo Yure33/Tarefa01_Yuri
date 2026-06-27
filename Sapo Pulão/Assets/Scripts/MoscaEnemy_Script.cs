@@ -6,6 +6,7 @@ public class MoscaEnemy_Script : MonoBehaviour
 {
     [SerializeField] float velocidade;
     [SerializeField] bool IsMoscaMestre;
+    [SerializeField] SpriteRenderer sprMosca;
     GameObject player;
     void Start()
     {
@@ -22,7 +23,16 @@ public class MoscaEnemy_Script : MonoBehaviour
                 velocidade = Mathf.Lerp(1.5f, 3.5f, Math.Clamp(Mathf.Abs(player.transform.position.x-transform.position.x), 1, 15)/15);
                 Debug.Log(Vector2.Distance(player.transform.position, transform.position));
             }
-            transform.position += (player.transform.position-transform.position).normalized*velocidade*Time.fixedDeltaTime; 
+            Vector3 direction = (player.transform.position-transform.position).normalized*velocidade*Time.fixedDeltaTime;
+            transform.position += direction; 
+            if(direction.x < 0)
+            {
+                sprMosca.flipX = true;
+            }
+            else
+            {
+                sprMosca.flipX = false;
+            }
         }
     }
 

@@ -7,6 +7,8 @@ public class AttackLingua_Script : MonoBehaviour
     [SerializeField] Transform Parent;
     [SerializeField] LineRenderer Lingua;
     [SerializeField] LayerMask layer;
+    [SerializeField] AudioSource SFX;
+    [SerializeField] AudioClip[] audios;
     public bool IsAttack = false;
     Vector2 TeclaID;
     GameObject alvoSave;
@@ -26,6 +28,7 @@ public class AttackLingua_Script : MonoBehaviour
             {
                 StartCoroutine(Linguada());
             }
+            SFX.PlayOneShot(audios[0]);
         }
     }
 
@@ -39,6 +42,8 @@ public class AttackLingua_Script : MonoBehaviour
             //ESPERAR UM TEMPO
             Destroy(alvo, 0.2f);
             yield return new WaitForSeconds(0.3f);
+            SFX.PlayOneShot(audios[1]);
+            
             //RETORNAR A POSIÇÃO PADRÃO
             if (IsAttack)
             {
